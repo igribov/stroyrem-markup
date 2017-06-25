@@ -1,0 +1,70 @@
+@import "includes/_varibles"
+@import "includes/_sprite"
+@import "includes/_mixins"
+
+.header
+    padding-top 40px
+    margin-bottom 30px
+    overflow hidden
+    text-align center
+    
+.header-search
+    position relative
+    display inline-block
+    text-align left
+    vertical-align top
+    width 100%
+    max-width 360px
+    &:after
+        position absolute
+        content ''
+        display block
+        sprite($s-icon-search)
+        right 0px
+        top 6px
+    input[type="text"]
+        width 360px
+        background-color greyColor
+        line-height 30px
+        padding-left 20px
+        border none
+        border-radius 4px
+        font-size .75rem
+         
+.header-logo
+    float left
+    text-align left
+    
+.header-contacts
+    width 100%
+    max-width 330px;
+    float right
+    text-align left    
+   
+.header__phone
+    font-size 2.125rem
+
+.header__phone--regular
+    font-family BebasRegular
+    
+.header__phone--bold
+    font-family BebasBold
+    
+.header-contacts__bottom   
+    text-align left
+
+.header-contacts__top
+    overflow hidden
+    .g-btn
+        max-width 135px
+        width 100%
+        border-radius 5px
+        line-height 22px
+        font-size .75rem
+        float right
+        text-transform lowercase
+        
+.header-address
+    width 100%
+    font-size .875rem
+    color greyTextColor
