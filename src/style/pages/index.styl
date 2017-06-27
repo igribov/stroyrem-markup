@@ -1,7 +1,48 @@
 @import "../main"
 
 .top-advantages
+    text-align center
     margin-bottom 20px
-    border 1px solid redColor
-    border-radius 5px
+    border 2px solid redColor
     padding 25px 0
+
+.top-advantages__item
+    position relative
+    display inline-block
+    width 20%
+    margin 0 2%
+    left 0
+    top 0
+    &:before
+        content ''
+        position absolute
+        display block
+        sprite($s-expirience)
+    span
+        font-family bebasBold
+        font-size 1.1rem
+
+.top-advantages__item--experience
+    &:before
+      top -15px
+      left 20px
+      sprite($s-expirience)
+
+.top-advantages__item--personal
+    &:before
+      top -16px
+      left -14px
+      sprite($s-personal)
+
+.top-advantages__item--guarantee
+    &:before
+      top -14px
+      left 2px
+      sprite($s-contract)
+
+.top-advantages__item--term
+    &:before
+      top -8px
+      left 36px
+      sprite($s-clock)
+
