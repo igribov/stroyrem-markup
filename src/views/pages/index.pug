@@ -16,3 +16,14 @@ block content
             span Гарантия на услуги
         .top-advantages__item.top-advantages__item--term
             span Точно в срок
+    include ../includes/navigation.pug
+    section.main-banner
+        .main-banner__form
+            span.form-title Задайте вопрос
+            form.feed-back-form
+                input(type="text" name="name" placeholder="Ваше имя")
+                input(type="text" name="phone-number" placeholder="Ваш телефон")
+                textarea(name="message" placeholder="Ваше сообщение")
+                input(type="submit" value="Отправить").submit-button
+        .main-banner__slider
+            .active-main-slider
