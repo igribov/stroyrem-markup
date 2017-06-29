@@ -51,12 +51,28 @@
 .main-banner
   overflow hidden
 
-.main-banner__slider
+.main-banner-slider
   float right
   width 70%
-.js-main-slider
-  margin 0
-  padding 0
-  li
-    list-style none
+  .js-main-slider
+    margin 0
+    padding 0
+    li
+      list-style none
+  .main-banner-slider__prev, .main-banner-slider__next
+    &:after
+      position absolute
+      content ''
+      right 0px
+      top 6px
+  .main-banner-slider__prev
+    &:after
+      sprite($s-arrow-left)
+  .main-banner-slider__next
+    &:after
+      sprite($s-arrow-right)
 
+.js-main-slider__one-slide
+  h3
+    position absolute
+    display block

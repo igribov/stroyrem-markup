@@ -5,7 +5,11 @@ block title
 
 append styles
     link(rel="stylesheet" type='text/css' href='style/index.css')
-        
+    link(rel="stylesheet" type='text/css' href='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css')
+    link(rel="stylesheet" type='text/css' href='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css')
+append scripts
+    script(type='text/javascript' src='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js')
+    script(type='text/javascript' src='/js/index.js')
 block content
     section.top-advantages
         .top-advantages__item.top-advantages__item--experience
@@ -25,7 +29,13 @@ block content
                 input(type="text" name="phone-number" placeholder="Ваш телефон")
                 textarea(name="message" placeholder="Ваше сообщение")
                 input(type="submit" value="Отправить").submit-button
-        .main-banner__slider
-            ul.js-main-slider
-                li
-                    img(src="./img/slider/slide1.jpg")
+        .main-banner-slider
+            //.main-banner-slider__prev
+            //.main-banner-slider__next
+            .js-main-slider
+                div.js-main-slider__one-slide
+                    h3 One
+                    img(height="305px" width="100%" src="./img/slider/slide1.jpg")
+                div.js-main-slider__one-slide
+                    h3 Two
+                    img(height="305px" width="100%" src="./img/slider/slide1.jpg")
