@@ -1,46 +1,48 @@
-var gulp = require('gulp');
-var pug = require('gulp-pug');
-var stylus = require('gulp-stylus');
-var sourcemaps = require('gulp-sourcemaps');
-var browserSync = require('browser-sync').create();
-var del = require('del');
-var spritesmith = require("gulp.spritesmith");
-var notify = require("gulp-notify");
-var autoprefixer = require('gulp-autoprefixer');
-
+var gulp = require('gulp'),
+	pug = require('gulp-pug'),
+	stylus = require('gulp-stylus'),
+	sourcemaps = require('gulp-sourcemaps'),
+	browserSync = require('browser-sync').create(),
+	del = require('del'),
+	spritesmith = require("gulp.spritesmith"),
+	notify = require("gulp-notify"),
+	autoprefixer = require('gulp-autoprefixer'),
+    imagemin = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant'),
+    cache = require('gulp-cache');
 
 gulp.task('views', function buildHTML() {
-  return gulp.src('./src/views/pages/*.pug')
-    .pipe(pug({
-    // Your options in here.
-    }))
-    .pipe(gulp.dest('./public/'));
+    return gulp.src('./src/views/pages/*.pug')
+        .pipe(pug({
+            // Your options in here.
+        }))
+        .pipe(gulp.dest('./public/'));
 });
 
 
 gulp.task('style', function buildHTML() {
-  return gulp.src(['./src/style/pages/*.styl', './src/style/common.styl'])
-    .pipe(sourcemaps.init())
-    .pipe(stylus({
-      'include css': true
-    }))
-    .on("error", notify.onError(function(error) {
-        return "Message to the notifier: " + error.message;
-    }))
-    .pipe(autoprefixer(['last 2 version']))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./public/style/'));
+    return gulp.src(['./src/style/pages/*.styl', './src/style/common.styl'])
+        .pipe(sourcemaps.init())
+        .pipe(stylus({
+            'include css': true
+        }))
+        .on("error", notify.onError(function (error) {
+            return "Message to the notifier: " + error.message;
+        }))
+        .pipe(autoprefixer(['last 2 version']))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./public/style/'));
 });
 
 // Сборка спрайтов PNG
-gulp.task('cleansprite', function() {
+gulp.task('cleansprite', function () {
     return del.sync('public/img/sprite/sprite.png');
 });
 
 
-gulp.task('spritemade', function() {
-    var spriteData =
-        gulp.src('src/img/sprite/*.*')
+gulp.task('spritemade', function () {
+    spriteData =
+    gulp.src('src/img/sprite/*.*')
         .pipe(spritesmith({
             imgName: 'sprite.png',
             cssName: '_sprite.styl',
@@ -48,11 +50,10 @@ gulp.task('spritemade', function() {
             cssFormat: 'stylus',
             algorithm: 'binary-tree',
             cssTemplate: 'stylus.template.mustache',
-            cssVarMap: function(sprite) {
+            cssVarMap: function (sprite) {
                 sprite.name = 's-' + sprite.name;
             }
         }));
-
     spriteData.img.pipe(gulp.dest('public/img/')); // путь, куда сохраняем картинку
     spriteData.css.pipe(gulp.dest('src/style/includes/')); // путь, куда сохраняем стили
 });
@@ -60,18 +61,27 @@ gulp.task('spritemade', function() {
 gulp.task('sprite', ['cleansprite', 'spritemade']);
 
 gulp.task('fonts', function buildHTML() {
-  return gulp.src('./src/style/fonts/**')
-    .pipe(gulp.dest('./public/fonts/'));
+    return gulp.src('./src/style/fonts/**')
+        .pipe(gulp.dest('./public/fonts/'));
+});
+
+gulp.task('img', function () {
+    return gulp.src(['src/content/img/**/*', '!spc/img/sprite/*'])
+        .pipe(cache(imagemin({
+            progressive: true,
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest('public/img/'));
 });
 
 // Очистка папки сборки
-gulp.task('clean', function() {
+gulp.task('clean', function () {
     return del.sync('public');
 });
 
-gulp.task('default', ['views','style','fonts','sprite']);
+gulp.task('default', ['views', 'style', 'fonts', 'sprite','img']);
 
-gulp.task('serve', ['default'], function() {
+gulp.task('serve', ['default'], function () {
 
     browserSync.init({
         server: "./public"
