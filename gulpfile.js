@@ -98,6 +98,7 @@ gulp.task('serve', ['default'], function () {
   gulp.watch("src/style/**/*.styl", ['style']);
   gulp.watch("src/views/**/*.pug", ['views']);
   gulp.watch("src/js/*.js", ['scripts']);
+  gulp.watch("src/img/**/*", ['sprite', 'img']);
   gulp.watch("public/*.html").on('change', browserSync.reload);
   gulp.watch("public/*.js").on('change', browserSync.reload);
   gulp.watch("public/style/*.css").on('change', browserSync.reload);

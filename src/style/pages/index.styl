@@ -54,6 +54,7 @@
 .main-banner-slider
   position relative
   float right
+  overflow h
   width 70%
   .js-main-slider
     margin 0
@@ -75,13 +76,22 @@
   right 0
   sprite($s-arrow-right)
 
+.js-main-slider__one-slide
+  padding 0 0.1px
 .js-main-slider__text
+  background-color rgba(76, 69, 69, 0.54)
+  max-height 130px
+  padding 10px
+  border-radius 4px
   position absolute
   max-width 700px
-  margin-top 160px
+  margin-top 150px
   margin-left 50px
   p
     display block
+    padding 0
+    margin 0
+    margin-bottom 10px
     line-height 20px
 
 .js-main-slider__title
