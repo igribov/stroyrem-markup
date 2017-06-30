@@ -11,19 +11,19 @@ append scripts
     script(type='text/javascript' src='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js')
     script(type='text/javascript' src='/js/index.js')
 block content
-    section.top-advantages
-        .top-advantages__item.top-advantages__item--experience
+    section.horizontal-items-in-board.horizontal-items-in-board--top-advantages
+        .horizontal-items-in-board__item.horizontal-items-in-board__item--top-advantages.horizontal-items-in-board__item--top-advantages--experience
             span Опыт на рынке
-        .top-advantages__item.top-advantages__item--personal
+        .horizontal-items-in-board__item.horizontal-items-in-board__item--top-advantages.horizontal-items-in-board__item--top-advantages--personal
             span Индивидуальный подход
-        .top-advantages__item.top-advantages__item--guarantee
+        .horizontal-items-in-board__item.horizontal-items-in-board__item--top-advantages.horizontal-items-in-board__item--top-advantages--guarantee
             span Гарантия на услуги
-        .top-advantages__item.top-advantages__item--term
+        .horizontal-items-in-board__item.horizontal-items-in-board__item--top-advantages.horizontal-items-in-board__item--top-advantages--term
             span Точно в срок
     include ../includes/navigation.pug
     section.main-banner
         .main-banner__form
-            span.form-title Задайте вопрос
+            span.base-title Задайте вопрос
             form.feed-back-form
                 input(type="text" name="name" placeholder="Ваше имя")
                 input(type="text" name="phone-number" placeholder="Ваш телефон")
@@ -39,7 +39,7 @@ block content
                         p.text-white
                             | Проектные решения разработаны профессионалами,
                             | проверены временем и высоко оценены нашими клиентами.
-                        a(href="#").g-btn Узнать подробности
+                        a(href="javascript:void(0);").g-btn Узнать подробности
                     img(src="./img/slider/slide1.jpg")
                 .js-main-slider__one-slide
                     .js-main-slider__text
@@ -47,5 +47,42 @@ block content
                         p.text-white
                             | Рациональная оценка работы, высокое качество,
                             | наши цены Вас приятно удивят.
-                        a(href="#").g-btn Узнать подробности
+                        a(href="javascript:void(0);").g-btn Узнать подробности
                     img(src="./img/slider/slide2.jpg")
+    main.main-index
+        aside.job-activities
+            span.job-activities__title.base-title Услуги
+            ul.job-activities-catalog
+                li.job-activities-catalog__item.job-activities-catalog__item--with-children
+                    a(href="javascript:void(0);").job-activities-catalog__link Отделка стен
+                li.active.job-activities-catalog__item.job-activities-catalog__item--with-children.active
+                    a(href="javascript:void(0);").job-activities-catalog__link Натяжные потолки
+                    ul.job-activities-catalog__submenu
+                        li.job-activities-catalog__link
+                            a(href="javascript:void(0);") Матовые
+                        li.job-activities-catalog__link
+                            a(href="javascript:void(0);") Глянцевые
+                li.job-activities-catalog__item.job-activities-catalog__item--with-children
+                    a(href="javascript:void(0);").job-activities-catalog__link Подвесные потолки
+                li.job-activities-catalog__item.job-activities-catalog__item--with-children
+                    a(href="javascript:void(0);").job-activities-catalog__link Устройство полов
+                li.job-activities-catalog__item.job-activities-catalog__item--with-children
+                    a(href="javascript:void(0);").job-activities-catalog__link Электромонтажные работы
+                li.job-activities-catalog__item.job-activities-catalog__item--with-children
+                    a(href="javascript:void(0);").job-activities-catalog__link Сантехнические работы
+                li.job-activities-catalog__item.job-activities-catalog__item--with-children
+                    a(href="javascript:void(0);").job-activities-catalog__link Фасадные работы
+                li.job-activities-catalog__item
+                    a(href="javascript:void(0);").job-activities-catalog__link Кровельные работы
+                li.job-activities-catalog__item
+                    a(href="javascript:void(0);").job-activities-catalog__link Установка окон, дверей
+
+        section.horizontal-items-in-board.horizontal-items-in-board--job-types
+            .horizontal-items-in-board__item.horizontal-items-in-board__item--job-types.horizontal-items-in-board__item--job-types--flour
+                span Укладка пола
+            .horizontal-items-in-board__item.horizontal-items-in-board__item--job-types.horizontal-items-in-board__item--job-types--design
+                span Проектирование
+            .horizontal-items-in-board__item.horizontal-items-in-board__item--job-types.horizontal-items-in-board__item--job-types--ceiling
+                span Натяжные потолки
+            .horizontal-items-in-board__item.horizontal-items-in-board__item--job-types.horizontal-items-in-board__item--job-types--tile
+                span Плиточные работы

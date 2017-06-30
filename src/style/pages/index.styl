@@ -2,51 +2,60 @@
 @import "../includes/_navigation"
 @import "../includes/_feedback_form"
 
-.top-advantages
-    text-align center
-    margin-bottom 20px
-    border 2px solid redColor
-    padding 25px 0
+.horizontal-items-in-board
+  text-align center
+  margin-bottom 20px
+  border 2px solid redColor
+  padding 25px 0
 
-.top-advantages__item
-    position relative
-    display inline-block
-    width 20%
-    margin 0 2%
-    left 0
-    top 0
-    &:before
-        content ''
-        position absolute
-        display block
-        sprite($s-expirience)
-    span
-        font-family bebasBold
-        font-size 1.1rem
+.horizontal-items-in-board__item
+  position relative
+  display inline-block
+  width 20%
+  margin 0 2%
+  left 0
+  top 0
+  &:before
+    content ''
+    position absolute
+    display block
+  span
+    font-family bebasBold
+    font-size 1.1rem
 
-.top-advantages__item--experience
-    &:before
-      top -15px
-      left 20px
-      sprite($s-expirience)
+.horizontal-items-in-board__item--top-advantages
+  width 20%
+  &:before
+    content ''
+    position absolute
+    display block
+  span
+    font-family bebasBold
+    font-size 1.1rem
 
-.top-advantages__item--personal
-    &:before
-      top -16px
-      left -14px
-      sprite($s-personal)
+.horizontal-items-in-board__item--top-advantages--experience
+  &:before
+    top -15px
+    left 20px
+    sprite($s-expirience)
 
-.top-advantages__item--guarantee
-    &:before
-      top -14px
-      left 2px
-      sprite($s-contract)
+.horizontal-items-in-board__item--top-advantages--personal
+  &:before
+    top -16px
+    left -14px
+    sprite($s-personal)
 
-.top-advantages__item--term
-    &:before
-      top -8px
-      left 36px
-      sprite($s-clock)
+.horizontal-items-in-board__item--top-advantages--guarantee
+  &:before
+    top -14px
+    left 2px
+    sprite($s-contract)
+
+.horizontal-items-in-board__item--top-advantages--term
+  &:before
+    top -8px
+    left 36px
+    sprite($s-clock)
 
 .main-banner
   overflow hidden
@@ -62,6 +71,7 @@
     img
       width 100%
       height 305px
+
 .main-banner-slider__prev, .main-banner-slider__next
   position absolute
   display block
@@ -69,15 +79,18 @@
   top 50%
   margin-top -24px
   z-index 10
+
 .main-banner-slider__prev
   sprite($s-arrow-left)
   left 0
+
 .main-banner-slider__next
   right 0
   sprite($s-arrow-right)
 
 .js-main-slider__one-slide
   padding 0 0.1px
+
 .js-main-slider__text
   background-color rgba(76, 69, 69, 0.54)
   max-height 130px
@@ -100,5 +113,91 @@
   font-size 2rem
   color redColor
 
+.horizontal-items-in-board.horizontal-items-in-board--job-types
+  width 70%
+  float right
+  margin-bottom 20px
+
+.horizontal-items-in-board__item--job-types
+  width 20%
+  &:before
+    content ''
+    position absolute
+    display block
+  span
+    font-family bebasBold
+    font-size 1.1rem
+
+.horizontal-items-in-board__item--job-types--flour
+  &:before
+    top -18px
+    left -10px
+    sprite($s-tile)
+
+.horizontal-items-in-board__item--job-types--design
+  &:before
+    top -10px
+    left -10px
+    sprite($s-design)
+
+.horizontal-items-in-board__item--job-types--ceiling
+  &:before
+    top -18px
+    left -25px
+    sprite($s-celling)
+
+.horizontal-items-in-board__item--job-types--tile
+  &:before
+    top -18px
+    left -22px
+    sprite($s-tile)
+
+.job-activities
+  width 28.5%
+  border-radius  4px
+  float left
+  display block
+  max-width 300px
+  padding 20px 20px
+  margin-bottom 40px
+  border 1px solid greyColor
+
+.job-activities__title
+  color redColor
+  text-align left
+  padding-top 10px
+
+.job-activities-catalog
+  padding 0
+
+.job-activities-catalog__link
+  display block
+  width 100%
+  height 100%
+  padding 20px 0
+
+.job-activities-catalog__item--with-children
+  &>a
+    &:after
+      content ''
+      float right
+      sprite($s-pointer_point)
+  &.active
+    &>a
+      &:after
+        sprite($s-pointer_point_open)
+    &>ul.job-activities-catalog__submenu
+      display block
+
+.job-activities-catalog__item
+  list-style none
+  border-top 1px solid greyColor
+  background-color white
+
+
+.job-activities-catalog__submenu
+  display none
+  &>li
+    border-top 1px solid greyColor
 
 
