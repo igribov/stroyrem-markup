@@ -52,27 +52,43 @@
   overflow hidden
 
 .main-banner-slider
+  position relative
   float right
   width 70%
   .js-main-slider
     margin 0
     padding 0
-    li
-      list-style none
-  .main-banner-slider__prev, .main-banner-slider__next
-    &:after
-      position absolute
-      content ''
-      right 0px
-      top 6px
-  .main-banner-slider__prev
-    &:after
-      sprite($s-arrow-left)
-  .main-banner-slider__next
-    &:after
-      sprite($s-arrow-right)
+    img
+      width 100%
+      height 305px
+.main-banner-slider__prev, .main-banner-slider__next
+  position absolute
+  display block
+  cursor pointer
+  top 50%
+  margin-top -24px
+  z-index 10
+.main-banner-slider__prev
+  sprite($s-arrow-left)
+  left 0
+.main-banner-slider__next
+  right 0
+  sprite($s-arrow-right)
 
-.js-main-slider__one-slide
-  h3
-    position absolute
+.js-main-slider__text
+  position absolute
+  max-width 700px
+  margin-top 160px
+  margin-left 50px
+  p
     display block
+    line-height 20px
+
+.js-main-slider__title
+  display block
+  font-family bebasBold
+  font-size 2rem
+  color redColor
+
+
+
