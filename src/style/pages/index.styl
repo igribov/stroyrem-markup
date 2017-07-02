@@ -114,9 +114,17 @@
   font-size 2rem
   color redColor
 
-.horizontal-items-in-board.horizontal-items-in-board--job-types
+.left-column
+  width 28.5%
+  display inline-block
+.right-column
   width 70%
   float right
+  display inline-block
+  
+  
+.horizontal-items-in-board.horizontal-items-in-board--job-types
+  width 100%
   margin-bottom 20px
 
 .horizontal-items-in-board__item--job-types
@@ -154,7 +162,7 @@
     sprite($s-tile)
 
 .job-activities
-  width 28.5%
+  width 100%
   border-radius  4px
   float left
   display block
@@ -211,7 +219,7 @@
     width 100%
     
 .about-company
-  width 70%
+  width 100%
   float right
   margin-bottom 20px
   
@@ -226,7 +234,7 @@
       list-style square
 
 .news-preview
-  width 28.5%
+  width 100%
   border-radius  4px
   float left
   display block
@@ -260,7 +268,80 @@
   color redColor
   display block
 
-.works-galery__title
-  text-align center
-.works-galery__content
+.small-gallery
   border none
+.small-gallery__title
+  text-align center
+.small-gallery__slider-block
+  border 1px solid greyColor
+  
+.small-gallery__slider
+  width 100%
+  padding 0 40px
+  
+  border none
+.small-gallery__slide
+  img
+    height 100px
+    width 95%
+    border 1px solid greyColor
+    padding 5px
+    box-shadow 1px 5px 5px 0 greyColor
+
+.small-gallery__current-slide-item
+  &:active
+    border none
+  position relative
+  padding 20px
+  padding-bottom 20px
+  margin 20px
+  border 1px solid greyColor
+  box-shadow 1px 5px 5px 0 greyColor
+  img 
+    width 100%
+    max-height 280px
+    margin-bottom 10px
+  
+.small-gallery__slide.slick-current
+  img 
+    border 2px solid redColor
+  
+.small-gallery__item-title 
+  display block
+  font-size 0.9rem
+  font-weight bold
+  line-height 30px
+  
+.small-gallery__item-description
+  display block
+  line-height 30px
+.small-gallery__item-price
+  display block
+  position absolute
+  float left
+  left 80%
+  top 325px
+  border-radius 50px
+  color redColor
+  font-weight bold
+  border 2px solid redColor
+  padding 8px
+  
+.small-gallery__slide__prev,.small-gallery__slide__next
+  position relative
+  display block
+  cursor pointer
+  z-index 12
+  top 50%
+
+.small-gallery__slide__prev
+  float left
+  left 5px
+  top 36px
+  sprite($s-small-arrow-left)  
+
+.small-gallery__slide__next
+  float right
+  left -5px
+  top 36px
+  sprite($s-small-arrow-right)

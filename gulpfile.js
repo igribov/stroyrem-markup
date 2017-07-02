@@ -11,6 +11,11 @@ var gulp = require('gulp'),
   pngquant = require('imagemin-pngquant'),
   cache = require('gulp-cache');
 
+gulp.task('vendor', function buildHTML() {
+  return gulp.src('./src/vendor/*')
+    .pipe(gulp.dest('./public/vendor/'));
+});
+
 gulp.task('views', function buildHTML() {
   return gulp.src('./src/views/pages/*.pug')
     .pipe(pug({
@@ -87,7 +92,7 @@ gulp.task('clean', function () {
   return del.sync('public');
 });
 
-gulp.task('default', ['views', 'style','scripts', 'fonts', 'sprite', 'img']);
+gulp.task('default', ['vendor', 'views', 'style','scripts', 'fonts', 'sprite', 'img']);
 
 gulp.task('serve', ['default'], function () {
 
