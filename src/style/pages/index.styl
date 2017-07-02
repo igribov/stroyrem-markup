@@ -36,25 +36,25 @@
 .horizontal-items-in-board__item--top-advantages--experience
   &:before
     top -15px
-    left 20px
+    left 10px
     sprite($s-expirience)
 
 .horizontal-items-in-board__item--top-advantages--personal
   &:before
     top -16px
-    left -14px
+    left -20px
     sprite($s-personal)
 
 .horizontal-items-in-board__item--top-advantages--guarantee
   &:before
     top -14px
-    left 2px
+    left -6px
     sprite($s-contract)
 
 .horizontal-items-in-board__item--top-advantages--term
   &:before
     top -8px
-    left 36px
+    left 22px
     sprite($s-clock)
 
 .main-banner
@@ -70,7 +70,7 @@
     padding 0
     img
       width 100%
-      height 305px
+      height 280px
 
 .main-banner-slider__prev, .main-banner-slider__next
   position absolute
@@ -97,9 +97,10 @@
   padding 10px
   border-radius 4px
   position absolute
-  max-width 700px
-  margin-top 150px
-  margin-left 50px
+  max-width 600px
+  width 60%
+  top 50%
+  margin-left 38px
   p
     display block
     padding 0
@@ -130,26 +131,26 @@
 
 .horizontal-items-in-board__item--job-types--flour
   &:before
-    top -18px
-    left -10px
+    top  -20px;
+    left -20px
     sprite($s-tile)
 
 .horizontal-items-in-board__item--job-types--design
   &:before
     top -10px
-    left -10px
+    left -18px
     sprite($s-design)
 
 .horizontal-items-in-board__item--job-types--ceiling
   &:before
     top -18px
-    left -25px
+    left -36px
     sprite($s-celling)
 
 .horizontal-items-in-board__item--job-types--tile
   &:before
     top -18px
-    left -22px
+    left -32px
     sprite($s-tile)
 
 .job-activities
@@ -159,7 +160,7 @@
   display block
   max-width 300px
   padding 20px 20px
-  margin-bottom 40px
+  margin-bottom 18px
   border 1px solid greyColor
 
 .job-activities__title
@@ -169,6 +170,12 @@
 
 .job-activities-catalog
   padding 0
+  margin 0
+  &> li
+      &:last-child
+          &>a
+            padding-bottom 0
+      
 
 .job-activities-catalog__link
   display block
@@ -178,6 +185,7 @@
 
 .job-activities-catalog__item--with-children
   &>a
+    border-bottom 1px solid greyColor
     &:after
       content ''
       float right
@@ -199,5 +207,60 @@
   display none
   &>li
     border-top 1px solid greyColor
+    color darkGreyColor
+    width 100%
+    
+.about-company
+  width 70%
+  float right
+  margin-bottom 20px
+  
+.about-company__title
+  border-top-left-radius 5px
+  border-top-right-radius 5px
+.about-company__content
+  min-height 320px
+  ul
+    padding-left 25px
+    li
+      list-style square
 
+.news-preview
+  width 28.5%
+  border-radius  4px
+  float left
+  display block
+  padding 20px 20px
+  margin-bottom 40px
+  border 1px solid greyColor
 
+.news-preview__title
+  color redColor
+  text-align left
+
+.news-preview-list
+  margin-bottom 10px
+  
+.news-preview-list__item
+  font-size 0.9rem
+  border-bottom 1px solid greyColor
+  padding 10px 0
+
+.news-preview-list__item-title
+  font-weight bold
+  line-height 20px
+  display block
+  margin-bottom 10px
+  
+.news-preview-list__item-text
+  line-height 20px
+  margin-bottom 10px
+  
+.news-preview-list__item-link
+  color redColor
+  display block
+
+.works-galery__title
+  text-align center
+.works-galery__content
+  border none

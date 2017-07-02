@@ -53,29 +53,30 @@ block content
         aside.job-activities
             span.job-activities__title.base-title Услуги
             ul.job-activities-catalog
-                li.job-activities-catalog__item.job-activities-catalog__item--with-children
+                li.job-activities-catalog__item
                     a(href="javascript:void(0);").job-activities-catalog__link Отделка стен
-                li.active.job-activities-catalog__item.job-activities-catalog__item--with-children.active
+                li.job-activities-catalog__item.job-activities-catalog__item--with-children
                     a(href="javascript:void(0);").job-activities-catalog__link Натяжные потолки
                     ul.job-activities-catalog__submenu
                         li.job-activities-catalog__link
                             a(href="javascript:void(0);") Матовые
                         li.job-activities-catalog__link
                             a(href="javascript:void(0);") Глянцевые
-                li.job-activities-catalog__item.job-activities-catalog__item--with-children
+                li.job-activities-catalog__item
                     a(href="javascript:void(0);").job-activities-catalog__link Подвесные потолки
-                li.job-activities-catalog__item.job-activities-catalog__item--with-children
+                li.job-activities-catalog__item
                     a(href="javascript:void(0);").job-activities-catalog__link Устройство полов
-                li.job-activities-catalog__item.job-activities-catalog__item--with-children
+                li.job-activities-catalog__item.job-activities-catalog__item--with-children.job-activities-catalog__item--with-children
                     a(href="javascript:void(0);").job-activities-catalog__link Электромонтажные работы
-                li.job-activities-catalog__item.job-activities-catalog__item--with-children
+                    ul.job-activities-catalog__submenu
+                        li.job-activities-catalog__link
+                            a(href="javascript:void(0);") Электропроводка
+                        li.job-activities-catalog__link
+                            a(href="javascript:void(0);") Освещение
+                li.job-activities-catalog__item
                     a(href="javascript:void(0);").job-activities-catalog__link Сантехнические работы
-                li.job-activities-catalog__item.job-activities-catalog__item--with-children
+                li.job-activities-catalog__item
                     a(href="javascript:void(0);").job-activities-catalog__link Фасадные работы
-                li.job-activities-catalog__item
-                    a(href="javascript:void(0);").job-activities-catalog__link Кровельные работы
-                li.job-activities-catalog__item
-                    a(href="javascript:void(0);").job-activities-catalog__link Установка окон, дверей
 
         section.horizontal-items-in-board.horizontal-items-in-board--job-types
             .horizontal-items-in-board__item.horizontal-items-in-board__item--job-types.horizontal-items-in-board__item--job-types--flour
@@ -86,3 +87,47 @@ block content
                 span Натяжные потолки
             .horizontal-items-in-board__item.horizontal-items-in-board__item--job-types.horizontal-items-in-board__item--job-types--tile
                 span Плиточные работы
+        section.base-article.about-company
+          h3.article_title.about-company__title О компании
+          .article_content.about-company__content
+            p 
+              b|ООО «РемонтПро» 
+              |образовалась в 2016 году за счет слияния двух компаний, каждая из которых имела серьезный опыт в сфере строительства и ремонта.
+            p Создание юридического лица обусловлено несколькими важными факторами:
+            ul
+              li Опыт и квалификация специалистов, ответственное отношение к работе позволило компании выйти на новый серьезный уровень;
+              li Выполняем крупные заказы, в том числе и в государственном секторе, в соответствии с новым статусом компании;
+              li Наша команда, техническая и технологическая база позволяет сдавать большие объемы в минимальные сроки;
+              li Мы несем ответственность и берем на себя гарантийные обязательства за качество выполненных работ.
+        section.news-preview
+          span.news-preview__title.base-title Статьи
+          ul.news-preview-list
+            li.news-preview-list__item
+              span.news-preview-list__item-title Почему ремонт квартир «под ключ» выгоднее ремонта по частям?
+              .news-preview-list__item-text
+                p Многие клиенты, даже заказывая ремонт однокомнатной квартиры, хотят сэкономить и...
+              a.news-preview-list__item-link(href="#") Подробнее...
+            li.news-preview-list__item
+              span.news-preview-list__item-title Почему ремонт квартир «под ключ» выгоднее ремонта по частям?
+              .news-preview-list__item-text
+                p Деревянный дом – это не просто загородное жилье, это уникальный уютный мир с оздоравливающим...
+              a.news-preview-list__item-link(href="#") Подробнее...
+            li.news-preview-list__item
+              span.news-preview-list__item-title Из чего лучше всего построить деревянный дом?
+              .news-preview-list__item-text
+                p Деревянный дом – это не просто загородное жилье, это уникальный уютный мир с оздоравливающим...
+              a.news-preview-list__item-link(href="#") Подробнее...
+          a.g-btn(href="#") Все статьи
+
+        section.base-article.works-galery
+          h3.article_title.works-galery__title Наши проекты
+          .article_content.works-galery__content
+            p 
+              b|ООО «РемонтПро» 
+              |образовалась в 2016 году за счет слияния двух компаний, каждая из которых имела серьезный опыт в сфере строительства и ремонта.
+            p Создание юридического лица обусловлено несколькими важными факторами:
+            ul
+              li Опыт и квалификация специалистов, ответственное отношение к работе позволило компании выйти на новый серьезный уровень;
+              li Выполняем крупные заказы, в том числе и в государственном секторе, в соответствии с новым статусом компании;
+              li Наша команда, техническая и технологическая база позволяет сдавать большие объемы в минимальные сроки;
+              li Мы несем ответственность и берем на себя гарантийные обязательства за качество выполненных работ.

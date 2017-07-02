@@ -5,20 +5,87 @@
 @import "common"
 
 html
-    font-height 16px
+  font-height 16px
 
 body
-    font-family mainFont
-    line-height 1
+  font-family mainFont
+  line-height 1
 
 a
-    text-decoration none
-    color black
-    
+  text-decoration none
+  color black
+  
 .wrapper
-    width 100%
-    max-width 1200px
-    margin 0 auto
+  width 100%
+  max-width 1200px
+  margin 0 auto
 
 li
-    list-style none
+  list-style none
+h1,h2,h3,h4,h5,h6
+  margin 0
+
+ul,li
+  margin 0
+  padding 0
+  list-style-type none
+  
+p
+  margin 0
+  
+a
+  text-decoration none
+  color black
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video
+  vertical-align middle
+  
+textarea
+  resize none
+
+section
+  position relative
+  margin-bottom 20px
+
+input,
+select,
+button
+  outline none
+
+*, *:before, *:after
+  box-sizing border-box
+  
+.hide
+  display none
+  
+.show
+  display block
+  
+::-moz-selection 
+  background: #b3d4fc;
+  text-shadow: none;
+  
+::selection 
+  background: #b3d4fc;
+  text-shadow: none;
+  
+.clearfix:before,
+.clearfix:after 
+  content: " ";
+  display: table;
+
+.clearfix:after 
+  clear: both;
+
+.clearfix 
+  *zoom: 1;
+
+.wrapper
+  width 100%
+  max-width 1000px
+  margin 0 auto
