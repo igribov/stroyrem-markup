@@ -1,6 +1,5 @@
 
 jQuery(function($){
-
     // Main banner
     $('.js-main-slider').slick({
       arrows: true,
@@ -34,5 +33,41 @@ jQuery(function($){
     $(document).on('click', '.job-activities-catalog__item--with-children > a', function() {
         $(this).parent().toggleClass('active');
     });
+
+
+    // call phone button animation
+    var callMeButton = $('.get-callback-call__button');
+    callMeButton.addClass('right-deg-transform');
+
+    // callback button
+    setInterval(function() {
+      callMeButton.toggleClass('right-deg-transform');
+      callMeButton.toggleClass('left-deg-transform');
+    }, 1000);
+
+    //animation
+    var blockPos = document.getElementsByClassName('our-advantages-of-work')[0].getBoundingClientRect().top;
+    var startAnimate = function() {
+      $('.block-images-list__list-item').each(function (k, el) {
+        var $el = $(el);
+        if($el.hasClass('animate-from-left')) {
+          $el.addClass('come-inner-from-left');
+        } else if($el.hasClass('animate-from-right')) {
+          $el.addClass('come-inner-from-right');
+        } else if($el.hasClass('animate-from-top')) {
+          $el.addClass('come-inner-from-top');
+        } else if($el.hasClass('animate-from-bottom')) {
+          $el.addClass('come-inner-from-bottom');
+        }
+      });
+    };
+
+    window.onscroll = function() {
+      console.log(window.pageYOffset, blockPos);
+
+      if(window.pageYOffset >= blockPos) {
+        startAnimate();
+      }
+    };
 
 });

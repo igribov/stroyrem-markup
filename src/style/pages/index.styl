@@ -352,8 +352,36 @@
 
 .block-images-list
   display block
+  min-height 374px
+  overflow hidden
+
+@keyframes block-images-list__list-item-inner-from-left
+  0%
+    left -1000px
+  100%
+    left 0
+
+@keyframes block-images-list__list-item-inner-from-right
+  0%
+    left 1000px
+  100%
+    left 0
+
+@keyframes block-images-list__list-item-inner-from-top
+  0%
+    top -500px
+  100%
+    top 0
+
+@keyframes block-images-list__list-item-inner-from-bottom
+  0%
+    top 500px
+  100%
+    top 0
 
 .block-images-list__list-item
+  position relative
+  box-shadow 2px 5px 5px 0 #ccc
   vertical-align top
   min-height 160px
   display inline-block
@@ -362,6 +390,18 @@
   border 1px solid redColor
   border-top-left-radius 5px
   border-top-right-radius 5px
+  &.come-inner-from-left
+    animation-name block-images-list__list-item-inner-from-left
+    animation-duration 3s
+  &.come-inner-from-right
+    animation-name block-images-list__list-item-inner-from-right
+    animation-duration 3s
+  &.come-inner-from-top
+    animation-name block-images-list__list-item-inner-from-top
+    animation-duration 3s
+  &.come-inner-from-bottom
+    animation-name block-images-list__list-item-inner-from-bottom
+    animation-duration 3s
 
 .block-images-list__item-title
   display block
@@ -388,41 +428,81 @@
 .block-images-list__item-title.free-markup
   &:before
     height 20px
-    top 60px
-    left 5px
+    top -12px
+    left -10px
     sprite($s-prm-6-sm)
 
 .block-images-list__item-title.sertificate
   &:before
     height 20px
-    left 340px
-    top 60px
+    left -10px
+    top -12px
     sprite($s-prm-5-sm)
 
 .block-images-list__item-title.good-price
   &:before
     height 20px
-    left 665px
-    top 62px
+    top -12px
+    left -16px
     sprite($s-prm-4-sm)
 
 .block-images-list__item-title.garanty
   &:before
     height 20px
-    left 665px
-    top 252px
+    top -12px
+    left -16px
     sprite($s-prm-1-sm)
 
-.block-images-list__item-title.disign-proj
+.block-images-list__item-title.fast-work
   &:before
     height 20px
-    left 340px
-    top 252px
+    top -12px
+    left -16px
     sprite($s-prm-2-sm)
 
 .block-images-list__item-title.express-work
   &:before
     height 20px
-    top 252px
-    left 0px
+    top -12px
+    left -16px
     sprite($s-prm-3-sm)
+
+.get-callback-call
+  height 80px
+  padding 20px 0
+  background-color white
+  color redColor
+  border 2px solid redColor
+
+.get-callback-call__black
+  color black
+
+
+@keyframes small-rotate-left
+  from
+    transform rotate(3deg)
+
+@keyframes small-rotate-right
+  from
+    transform rotate(-3deg)
+
+.get-callback-call__button
+  &.left-deg-transform
+    animation-name small-rotate-left
+    animation-duration 1s
+    transform rotate(-3deg)
+  &.right-deg-transform
+    animation-name small-rotate-right
+    animation-duration 1s
+    transform rotate(3deg)
+  font-size 1.5rem
+  border-radius 5px
+  padding 10px
+  padding-bottom 3px
+  line-height 20px
+  margin-left 20px
+  border 1px solid white
+  &:hover
+    color redColor
+    background-color white
+    border 1px solid redColor
