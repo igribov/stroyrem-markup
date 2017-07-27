@@ -36,7 +36,7 @@
 .horizontal-items-in-board__item--top-advantages--experience
   &:before
     top -15px
-    left 10px
+    left 0px
     sprite($s-expirience)
 
 .horizontal-items-in-board__item--top-advantages--personal
@@ -239,7 +239,7 @@
   float left
   display block
   padding 20px 20px
-  margin-bottom 40px
+  margin-bottom 20px
   border 1px solid greyColor
 
 .news-preview__title
@@ -306,8 +306,11 @@
 .small-gallery__slide.slick-current
   img 
     border 2px solid redColor
-  
-.small-gallery__item-title 
+
+.small-gallery__image-description
+  min-height 82px
+
+.small-gallery__item-title
   display block
   font-size 0.9rem
   font-weight bold
@@ -346,3 +349,80 @@
   left -5px
   top 36px
   sprite($s-small-arrow-right)
+
+.block-images-list
+  display block
+
+.block-images-list__list-item
+  vertical-align top
+  min-height 160px
+  display inline-block
+  margin 16px
+  width 30%;
+  border 1px solid redColor
+  border-top-left-radius 5px
+  border-top-right-radius 5px
+
+.block-images-list__item-title
+  display block
+  font-size 1.2rem
+  font-family bebasBold
+  background-color redColor
+  color white
+  text-align right
+  padding 5px 10px
+  border-top-left-radius 5px
+  border-top-right-radius 5px
+
+.block-images-list__item-text
+  display block
+  max-height 140px
+  padding 10px
+
+.block-images-list__item-title
+  &:before
+    content ''
+    position absolute
+    display block
+
+.block-images-list__item-title.free-markup
+  &:before
+    height 20px
+    top 60px
+    left 5px
+    sprite($s-prm-6-sm)
+
+.block-images-list__item-title.sertificate
+  &:before
+    height 20px
+    left 340px
+    top 60px
+    sprite($s-prm-5-sm)
+
+.block-images-list__item-title.good-price
+  &:before
+    height 20px
+    left 665px
+    top 62px
+    sprite($s-prm-4-sm)
+
+.block-images-list__item-title.garanty
+  &:before
+    height 20px
+    left 665px
+    top 252px
+    sprite($s-prm-1-sm)
+
+.block-images-list__item-title.disign-proj
+  &:before
+    height 20px
+    left 340px
+    top 252px
+    sprite($s-prm-2-sm)
+
+.block-images-list__item-title.express-work
+  &:before
+    height 20px
+    top 252px
+    left 0px
+    sprite($s-prm-3-sm)
