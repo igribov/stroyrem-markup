@@ -46,7 +46,6 @@ jQuery(function($){
     }, 1000);
 
     //animation
-    var blockPos = document.getElementsByClassName('our-advantages-of-work')[0].getBoundingClientRect().top;
     var startAnimate = function() {
       $('.block-images-list__list-item').each(function (k, el) {
         var $el = $(el);
@@ -62,10 +61,11 @@ jQuery(function($){
       });
     };
 
+    var block = document.getElementsByClassName('our-advantages-of-work')[0];
     window.onscroll = function() {
-      console.log(window.pageYOffset, blockPos);
+      console.log(window.pageYOffset + block.getBoundingClientRect().height > block.offsetTop);
 
-      if(window.pageYOffset >= blockPos) {
+      if(window.pageYOffset + block.getBoundingClientRect().height > block.offsetTop) {
         startAnimate();
       }
     };

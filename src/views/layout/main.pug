@@ -6,14 +6,14 @@ html(lang="ru-RU")
     meta(name="viewport", content="width=device-width,initial-scale=1")
     meta(name="keywords", content="")
     block styles
-        link(rel="stylesheet" type='text/css' href='style/common.css')
+      link(rel="stylesheet" type='text/css' href='style/common.css')
 
     title 
-        block title
+      block title
   body
     .wrapper
-        include ../includes/header.pug
-        block content
-    include ../includes/footer.pug
+      include ../includes/header.pug
+      block content
+      include ../includes/footer.pug
     block scripts
-        script(type='text/javascript' src='vendor/jquery.min.js')
+      script(type='text/javascript' src='vendor/jquery.min.js')
